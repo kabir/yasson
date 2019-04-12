@@ -48,15 +48,15 @@ public class JsonbComponentInstanceCreatorFactory {
      * @return Component instance creator, either CDI or default constructor.
      */
     public static JsonbComponentInstanceCreator getComponentInstanceCreator() {
-        Object beanManager = getCdiBeanManager();
-        if (beanManager == null) {
-            beanManager = getJndiBeanManager();
-        }
-        if (beanManager == null) {
-            log.finest(Messages.getMessage(MessageKeys.BEAN_MANAGER_NOT_FOUND_USING_DEFAULT));
+//        Object beanManager = getCdiBeanManager();
+//        if (beanManager == null) {
+//            beanManager = getJndiBeanManager();
+//        }
+//        if (beanManager == null) {
+//            log.finest(Messages.getMessage(MessageKeys.BEAN_MANAGER_NOT_FOUND_USING_DEFAULT));
             return new DefaultConstructorCreator();
-        }
-        return new BeanManagerInstanceCreator(beanManager);
+//        }
+//        return new BeanManagerInstanceCreator(beanManager);
     }
 
     /**
